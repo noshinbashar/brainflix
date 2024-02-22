@@ -1,1 +1,68 @@
-// Will start soon!
+@use "../../styles/partials/variables" as *;
+.header{
+    padding: 4%;
+    background-color: $White;
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+  }
+
+  .box {
+    display: flex;
+    justify-content:start;
+    background-color: $Alabaster;
+    width: 75%;
+    border: 1px solid $Mercury;
+    padding: 2.5%;
+    border-radius: 5px;
+    margin-top: 5%;
+    &__input {
+        border: transparent;
+        background-color: $Alabaster; 
+        padding-left: 5%;     
+    }
+    &__image {
+        padding-left: 3%;
+    }
+
+  }
+
+  .icon {
+    &__image{
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        position: absolute;
+        top: 35%;
+        right: 5%;
+    }
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: $BrainFlix-Blue;
+    margin-top: 5%;
+    border-radius: 5px;
+    position: relative;
+    &__text {
+        color: white;
+        font-weight: 600;
+        border: transparent;
+        background-color: $BrainFlix-Blue;
+        padding: 4%;
+    }
+    &__image {
+        position: absolute;
+        left: 5%;
+        top: 20%;
+    }
+
+  }
+
+
