@@ -3,11 +3,30 @@
   background-color: #FFFFFF;
   position: relative;
 }
+@media (min-width: 768px) {
+  .header {
+    display: flex;
+    justify-content: space-around;
+    padding: 1%;
+  }
+}
 
 .logo {
   display: flex;
   justify-content: center;
-  align-items: center;
+}
+@media (min-width: 768px) {
+  .logo {
+    justify-content: left;
+    height: 25px;
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+}
+@media (min-width: 1024px) {
+  .logo {
+    margin-left: 75px;
+  }
 }
 
 .box {
@@ -16,9 +35,23 @@
   background-color: #FAFAFA;
   width: 75%;
   border: 1px solid #E1E1E1;
-  padding: 2.5%;
+  padding: 9px;
   border-radius: 5px;
-  margin-top: 5%;
+  margin-top: 14px;
+}
+@media (min-width: 768px) {
+  .box {
+    width: 30%;
+    margin-top: 14px;
+    margin-left: 120px;
+    margin-right: 0%;
+  }
+}
+@media (min-width: 1024px) {
+  .box {
+    margin-left: 200px;
+    width: 27%;
+  }
 }
 .box__input {
   border: transparent;
@@ -30,12 +63,24 @@
 }
 
 .icon__image {
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   position: absolute;
-  top: 35%;
-  right: 5%;
+  top: 50px;
+  right: 15px;
+}
+@media (min-width: 768px) {
+  .icon__image {
+    top: 20px;
+    right: 30px;
+  }
+}
+@media (min-width: 1024px) {
+  .icon__image {
+    top: 25px;
+    right: 85px;
+  }
 }
 
 .button {
@@ -43,16 +88,28 @@
   justify-content: center;
   width: 100%;
   background-color: #0095FF;
-  margin-top: 5%;
+  margin-top: 14px;
   border-radius: 5px;
   position: relative;
 }
+@media (min-width: 768px) {
+  .button {
+    width: 20%;
+    margin-right: 10%;
+  }
+}
+@media (min-width: 1024px) {
+  .button {
+    margin-right: 130px;
+    width: 15%;
+  }
+}
 .button__text {
   color: white;
-  font-weight: 600;
+  font-weight: 400;
   border: transparent;
   background-color: #0095FF;
-  padding: 4%;
+  padding: 12px;
 }
 .button__image {
   position: absolute;
