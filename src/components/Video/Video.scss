@@ -6,3 +6,33 @@
     height: 200px;
     width: 100%;
 }
+
+.title {
+    padding: 0% 5%;
+    font-family:'AvenirNext LT Pro', sans-serif;
+    font-size: 12px;
+    margin: 0%;
+    color: $BrainFlix-Black;   
+}
+
+.data {
+    padding: 0% 5%;
+    padding-right: 15%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    &__item {
+        color:$Silver;
+        font-size: 13px;
+        &--channel {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+    }
+}
+
+.description {
+    padding: 0% 5%;
+    font-size: 13px;
+}
