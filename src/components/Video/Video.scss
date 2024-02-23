@@ -1,1 +1,8 @@
-// Will start!
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/fonts" as *;
+
+.video {
+    height: 200px;
+    width: 100%;
+}

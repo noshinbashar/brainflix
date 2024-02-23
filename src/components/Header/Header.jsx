@@ -10,21 +10,21 @@ function Header() {
         <header className="header">
             
             <div className="logo">
-            <img className="logo__image" src={Logo} alt="Hero Image" ></img>
+            <img className="logo__image" src={Logo} alt="HeroImage" ></img>
             </div>
 
             <div className="box">
-                <img className="box__image" src={SearchImage} alt="Search Image" ></img>
+                <img className="box__image" src={SearchImage} alt="Search" ></img>
                 <input className="box__input" type="text" placeholder="Search" />
             </div>
 
             <div className="icon">
-            <img className="icon__image" src={ImageIcon} alt="Icon Image" ></img> 
+            <img className="icon__image" src={ImageIcon} alt="Icon" ></img> 
             </div>
 
             <div className="button">
                 <button className="button__text">UPLOAD</button>
-                <img className="button__image" src={UploadImage} alt="Upload Image" ></img>
+                <img className="button__image" src={UploadImage} alt="Upload" ></img>
             </div>
 
 

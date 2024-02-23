@@ -1,4 +1,7 @@
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/fonts" as *;
+
 .header{
     padding: 4%;
     background-color: $White;
@@ -98,6 +101,8 @@
         border: transparent;
         background-color: $BrainFlix-Blue;
         padding: 12px;
+        font-family: 'AvenirNext LT Pro', sans-serif;
+        font-weight: 600;
         
     }
     &__image {
