@@ -13,11 +13,7 @@ function Comments(props) {
                         <p>{item.comment}</p>
                         {/* <p>{item.likes}</p> */}
                         <p>{item.timestamp}</p>
-
                     </li>
-
-
-
                     </>
                 )
             })}
