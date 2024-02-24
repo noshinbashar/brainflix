@@ -30,4 +30,33 @@ body {
 .video {
   height: 200px;
   width: 100%;
+}
+
+.title {
+  padding: 0% 5%;
+  font-family: "AvenirNext LT Pro", sans-serif;
+  font-size: 12px;
+  margin: 0%;
+  color: #323232;
+}
+
+.data {
+  padding: 0% 5%;
+  padding-right: 15%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.data__item {
+  color: #AFAFAF;
+  font-size: 13px;
+}
+.data__item--channel {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.description {
+  padding: 0% 5%;
+  font-size: 13px;
 }/*# sourceMappingURL=Video.css.map */

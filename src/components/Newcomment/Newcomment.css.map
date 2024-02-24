@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"Newcomment.css"}
+{"version":3,"sources":["../../styles/partials/_fonts.scss","Newcomment.css","../../styles/partials/_global.scss"],"names":[],"mappings":"AAAA;EACI,gCAAA;EACA,mJAAA;EAEA,gBAAA;EACA,kBAAA;EACA,kBAAA;ACAJ;ADGA;EACI,gCAAA;EACA,6IAAA;EAEA,gBAAA;EACA,kBAAA;EACA,kBAAA;ACFJ;ADKA;EACI,gCAAA;EACA,6IAAA;EAEA,gBAAA;EACA,kBAAA;EACA,kBAAA;ACJJ;ACjBA;EACI,sBAAA;ADmBJ;;AChBE;EACE,4CAAA;ADmBJ","file":"Newcomment.css"}
