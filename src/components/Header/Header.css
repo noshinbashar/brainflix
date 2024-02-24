@@ -84,6 +84,7 @@ body {
 }
 .box__input {
   border: transparent;
+  outline: none;
   background-color: #FAFAFA;
   padding-left: 5%;
 }
@@ -134,7 +135,7 @@ body {
   }
 }
 .button__text {
-  color: white;
+  color: #FFFFFF;
   font-weight: 400;
   border: transparent;
   background-color: #0095FF;

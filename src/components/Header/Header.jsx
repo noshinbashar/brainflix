@@ -27,9 +27,6 @@ function Header() {
                 <img className="button__image" src={UploadImage} alt="Upload" ></img>
             </div>
 
-
-            
-
         </header>
         </>
     );
