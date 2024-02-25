@@ -1,4 +1,55 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/fonts" as *;
+
+
 .videos {
-    width: 100px;
-    border-radius: 5px;
+    padding: 5%;
+    border-top: 1px solid $Mercury;
+    padding-top: 5%;
+}
+
+.title {                           // NEXT VIDEOS (title of the video list)
+    font-size: 12px;
+    color: $Silver;
+    font-weight: 600;
+    padding-left: 0%;
+
+}
+
+.videolist {
+    padding-inline-start: 0%;
+    list-style-type: none; 
+        margin-top: 0%;
+        margin-bottom: 0%;
+    &__videos {
+        width: 100px;
+        border-radius: 5px;
+    }
+    &__info {
+        margin-left: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    &__item {
+        display: flex;
+        margin-top: 0%;
+        margin-bottom: 0%;
+        
+    }
+    &__title {
+        font-size: 14px;
+        margin-bottom: 10px;
+        margin-top: 0%;
+        margin-bottom: 0%;
+        color: $BrainFlix-Black;
+        font-weight: 600;
+    }
+    &__channel {
+        font-size: 12px;
+        color: $BrainFlix-Black;
+    }
 }

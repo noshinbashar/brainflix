@@ -16,11 +16,13 @@
 }
 
 .data {
-    padding: 0% 5%;
-    padding-right: 15%;
+    margin: 0% 5%;
+    padding-right: 20%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    border-top: 1px solid $Mercury;
+    border-bottom: 1px solid $Mercury;
     &__item {
         color:$Silver;
         font-size: 13px;

@@ -4,10 +4,10 @@ function Comments(props) {
 
     function formatDate(timestamp) {
         const date = new Date(timestamp);
-        const day = date.getDate();
+        const day = date.getDate() + 1;
         const month = date.getMonth() + 1; 
         const year = date.getFullYear();
-        const formattedDate = `${day}/${month}/${year}`;
+        const formattedDate = `${month}/${day}/${year}`;
         return formattedDate;
     }
 
@@ -21,10 +21,11 @@ function Comments(props) {
                 return(
 
                     <li className="list" key={item.id}>
-                        <p>{item.name}</p>
-                        <p>{item.comment}</p>
+                        <p className="list__name">{item.name}</p>
+                        <p className="list__comment">{item.comment}</p>
                         {/* <p>{item.likes}</p> */}
-                        <p>{formatDate(item.timestamp)}</p>
+                        <p className="list__time">{formatDate(item.timestamp)}</p>
+                        <p className="list__image"></p>
                     </li>
                 )
             })}

@@ -3,24 +3,36 @@
 @use "../../styles/partials/fonts" as *;
 
 
-.comments {
-    // padding: 0%;
-    // margin: 0%;
-    // border-top: 1px solid $Mercury;
+.comments {                      
     padding: 5%;
     &__box {
-        border-bottom: 1px solid $Mercury;
-        
-        
         padding-inline-start: 0%;
-    }
-    
+    }   
 }
 
 
 .list {
-    
     list-style-type: none;
     border-top: 1px solid $Mercury;
     font-size: 13px;
+    padding-left: 20%;
+    position: relative;
+    &__name {
+        font-weight: 600;
+    }
+    &__time {
+        position: absolute;
+        top: 0%;
+        right: 5%;
+        color: $Silver;
+    }
+    &__image {                      //this represents profile image for each comment
+        width: 40px;
+        height: 40px;
+        background-color: $Mercury;
+        border-radius: 50%;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+    }
 }
