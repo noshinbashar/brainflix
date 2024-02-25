@@ -13,14 +13,12 @@ function App() {
   const [comments, setComments] = useState(videoData[0]);
   const [videolist, setVideolist] = useState(videoData);
 
-  function handleVideoClick (id) {
-    //  console.log("id: " id);
+  function handleVideoClick(id) {
     const clickedVideo = videolist.find((video) => {
     return video.id === id;
   });
   setSelectedVideo(clickedVideo);
-
-  
+  setComments(clickedVideo); 
   }
   
   return (

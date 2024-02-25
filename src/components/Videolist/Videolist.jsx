@@ -10,7 +10,7 @@ function Videolist(props) {
             .filter((videos) => (videos.id) !== props.selectedVideo.id) 
             .map((videos) => {
                 return (
-                    <li onClick={props.clickedVideo(videos.id)} key={videos.id}>
+                    <li onClick={() => props.clickedVideo(videos.id)} key={videos.id}>
                     <p><img className="videos" src={videos.image} alt="Video List"></img></p>
                     <p>{videos.title}</p>
                     <p>{videos.channel}</p>    
