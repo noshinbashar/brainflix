@@ -18,8 +18,8 @@
 }
 
 .videolist {
-    padding-inline-start: 0%;
-    list-style-type: none; 
+        padding-inline-start: 0%;
+        list-style-type: none; 
         margin-top: 0%;
         margin-bottom: 0%;
     &__videos {
@@ -36,8 +36,6 @@
     }
     &__item {
         display: flex;
-        margin-top: 0%;
-        margin-bottom: 0%;
         
     }
     &__title {
