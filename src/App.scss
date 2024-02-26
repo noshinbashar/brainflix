@@ -9,6 +9,8 @@
   }
 
   .itemone {
-    width: 70%;
+    @include desktop {
+        width: 70%;
+    }
   }
   
