@@ -2,15 +2,6 @@ import "./Comments.scss"
 
 function Comments(props) {
 
-    // function formatDate(timestamp) {
-    //     const date = new Date(timestamp);
-    //     const day = date.getDate() + 1;
-    //     const month = date.getMonth() + 1; 
-    //     const year = date.getFullYear();
-    //     const formattedDate = `${month}/${day}/${year}`;
-    //     return formattedDate;
-    // }
-
     function formatDate(timestamp) {
         const date = new Date(timestamp);
         const now = new Date();
