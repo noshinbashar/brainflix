@@ -38,7 +38,7 @@
         margin-top: 0%;
         position: relative;
         @include tablet {
-            width: 450px;
+            width: 420px;
             height: 40px;
         }
         &--text {                   // "Add a new comment"
@@ -75,7 +75,7 @@
             font-family: 'AvenirNext LT Pro', sans-serif;
             font-weight: 600;
         }
-        &__image {             //this is the icon of comment button
+        &__image {             //This is the icon of comment button
             position: absolute;
             left: 5%;
             top: 20%;
@@ -89,7 +89,7 @@
         top: 50px;
         left: 15px;
         @include tablet {
-            top: 70px;
+            top: 65px;
             left: 40px;
         }
     }

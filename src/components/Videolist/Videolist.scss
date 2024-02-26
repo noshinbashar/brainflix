@@ -5,8 +5,11 @@
 
 .videos {
     padding: 5%;
-    border-top: 1px solid $Mercury;
-    padding-top: 5%;
+    padding-top: 0%;
+    margin-top: 0%;
+    @include tablet {
+        padding-top: 0%;
+    }
 }
 
 .title {                           // NEXT VIDEOS (title of the video list)
@@ -14,6 +17,11 @@
     color: $Silver;
     font-weight: 600;
     padding-left: 0%;
+    margin-top: 0%;
+    margin-bottom: 1%;
+    @include tablet {
+        padding-top: 2%;
+    }
 
 }
 

@@ -5,8 +5,18 @@
 
 .comments {                      
     padding: 5%;
+    @include tablet {
+        padding-top: 0%;
+        padding-bottom: 0%;
+        
+    }
     &__box {
         padding-inline-start: 0%;
+        border-bottom: 1px solid $Mercury;
+        @include tablet {
+            padding-top: 2%;
+            padding-bottom: 2%;
+        }
     }   
 }
 
@@ -16,7 +26,11 @@
     border-top: 1px solid $Mercury;
     font-size: 13px;
     padding-left: 20%;
+    line-height: 1.5;
     position: relative;
+    @include tablet {
+        padding-left: 9%;
+    }
     &__name {
         font-weight: 600;
     }
@@ -25,8 +39,11 @@
         top: 0%;
         right: 5%;
         color: $Silver;
+        @include tablet {
+            right: 0%;
+        }
     }
-    &__image {                      //this represents profile image for each comment
+    &__image {                      //This represents profile image for each comment
         width: 40px;
         height: 40px;
         background-color: $Mercury;
