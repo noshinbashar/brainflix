@@ -38,32 +38,43 @@
 }
 
 .data {
-    margin: 5%;
-    padding: 1% 0%;
-    padding-right: 15%;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
+    margin: 5%;
     border-top: 1px solid $Mercury;
     border-bottom: 1px solid $Mercury;
+    padding-right: 15%;
+    @include tablet {
+        padding: 0%;
+        margin: 0% 5%;
+        border-top: none;
+    }
     &__item {
         color:$Silver;
         font-size: 13px;
-        display: flex;
-        margin-top: 8px;
-        &--likes {
-            padding-right: 5px;
+        @include tablet {
+            display: flex;
+            width: 30%;
+            justify-content: space-between;   
+        }
+        &__icons {
+            display: flex;   
         }
         &--views {
-            padding-right: 5px;
+            padding-right: 7px;
         }
-        &--channel {
-            font-size: 13px;
-            font-weight: 600;
+        &--likes {
+            padding-right: 7px;
         }
 
     }
+    &__channel {
+        font-size: 13px;
+        font-weight: 600;
+        color: $BrainFlix-DarkBlack;
+    }
 }
+
 
 .description {
     padding: 0% 5%;
