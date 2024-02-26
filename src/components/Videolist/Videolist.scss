@@ -10,6 +10,10 @@
     @include tablet {
         padding-top: 0%;
     }
+    @include desktop {
+        padding-top: 10%;
+        border-left: 1px solid $Mercury;
+    }
 }
 
 .title {                           // NEXT VIDEOS (title of the video list)

@@ -3,32 +3,6 @@
 @use "../../styles/partials/fonts" as *;
 
 
-// .videocontainer {           //This is the background of selected video
-//     height: 200px;
-//     width: 100%;
-//     background-color: black;
-//     display: flex;
-//     justify-content: center;
-//     @include tablet {
-//         height: 400px;
-//       }
-//       @include desktop {
-//         height: 450px;
-//       }
-//     &__video {               //This is selected video
-//       height: 100%;
-//       width: 100%;
-//       object-fit: cover; 
-//       @include tablet {
-//         width: 90%;
-//       }
-//       @include desktop {
-//         width: 70%;
-//       }
-//     }
-    
-//   }
-
 .videoName {                   //This is selected video title
     padding: 0% 5%;
     font-family:'AvenirNext LT Pro', sans-serif;
@@ -58,10 +32,16 @@
         @include tablet {
             display: flex;
             width: 30%;
-            justify-content: space-between;   
+            justify-content: space-between; 
+            @include desktop {
+              width: 35%;
+            }  
         }
         &__icons {
-            display: flex;   
+            display: flex; 
+            @include desktop {
+              padding: 0% 10%;
+            }
         }
         &--views {
             padding-right: 7px;

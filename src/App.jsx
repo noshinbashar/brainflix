@@ -28,12 +28,22 @@ function App() {
     <div className="App">
       <Header />
       <Videoimage videoimage={videoimage}/>
+
+      <div className="mainpage">
+
+      <div className="itemone">
       <Video selectedVideo={selectedVideo} />
       <NewComment />
       <Comments Comments={comments}/>
+      </div>
+
+      <div className="itemtwo">
       <Videolist Videolist={videolist} 
       clickedVideo={handleVideoClick}
       selectedVideo={selectedVideo}/>
+      </div>
+
+      </div>
       
     </div>
   );

@@ -28,6 +28,9 @@
         margin-bottom: 3%;
         font-weight: 600;
         color: $Silver;
+        @include desktop {
+            padding-left: 1%;
+        }
     }
     &__input {
         width: 100%;
@@ -40,6 +43,10 @@
         @include tablet {
             width: 420px;
             height: 40px;
+        }
+        @include desktop {
+            width: 350px;
+            margin-left: 1%;
         }
         &--text {                   // "Add a new comment"
             border: transparent;
@@ -65,6 +72,9 @@
             width: 200%;
             margin-top: 40%;
             margin-right: 20%;
+        }
+        @include desktop {
+            width: 170%;
         }
         &__text {
             color: $White;
