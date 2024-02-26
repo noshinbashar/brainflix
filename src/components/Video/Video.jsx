@@ -10,13 +10,13 @@ function Video(props) {
   };
     return(
       <>
-      <div className="videocontainer">
+      {/* <div className="videocontainer">
         <video
       className="videocontainer__video"
       poster={props.selectedVideo.image}
       controls
     ></video>
-        </div>
+        </div> */}
 
       <div className="videoName">
         <h1>{props.selectedVideo.title}</h1>
