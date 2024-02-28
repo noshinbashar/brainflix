@@ -1,0 +1,21 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/fonts" as *;
+
+// <h1 className="preview-title">Upload Video</h1>
+// <img className="preview-image" src={Preview} alt="PreviewImage" ></img>
+.preview {
+    padding: 0% 5%;
+    border-top: 1px solid $Mercury;
+
+}
+
+
+.preview-title {
+    font-size: 24px;
+    color: $BrainFlix-Black;
+}
+
+.preview-image {
+    width: 100%;
+}

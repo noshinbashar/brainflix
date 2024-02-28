@@ -3,6 +3,7 @@ import Logo from "./../../assets/Images/BrainFlix-logo.svg"
 import SearchImage from "./../../assets/Images/search.svg"
 import ImageIcon from "./../../assets/Images/Mohan-muruge.jpg"
 import UploadImage from "./../../assets/Images/upload.svg"
+import { NavLink } from "react-router-dom";
 
 function Header() {
     return (
@@ -10,7 +11,10 @@ function Header() {
         <header className="header">
             
             <div className="logo">
-            <img className="logo__image" src={Logo} alt="HeroImage" ></img>
+                <NavLink to="/">
+                <img className="logo__image" src={Logo} alt="HeroImage" ></img>
+                </NavLink>
+            
             </div>
 
             <div className="box">
@@ -23,8 +27,11 @@ function Header() {
             </div>
 
             <div className="button">
+                <NavLink to="/uploadpage">
                 <button className="button__text">UPLOAD</button>
                 <img className="button__image" src={UploadImage} alt="Upload" ></img>
+                </NavLink>
+                
             </div>
 
         </header>
