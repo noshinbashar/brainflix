@@ -2,8 +2,7 @@
 @use "../../styles/partials/global" as *;
 @use "../../styles/partials/fonts" as *;
 
-// <h1 className="preview-title">Upload Video</h1>
-// <img className="preview-image" src={Preview} alt="PreviewImage" ></img>
+
 .preview {
     padding: 0% 5%;
     border-top: 1px solid $Mercury;
@@ -11,11 +10,75 @@
 }
 
 
-.preview-title {
+.preview-title {           //'Upload Video' title
     font-size: 24px;
     color: $BrainFlix-Black;
+    padding: 4% 0%;
 }
 
-.preview-image {
+.preview-image {          //This is the uploaded video image
     width: 100%;
+}
+
+.preview-text {           //This is the title text
+    font-size: 12px;
+    font-weight: 600;
+    color: $Silver;
+    margin-bottom: 2%;
+}
+
+.preview-boxone {
+    width: 100%;
+    height: 35px;
+    border: 1px solid $Mercury;
+    border-radius: 5px;
+    background-color: $Alabaster; 
+}
+
+.preview-input {
+    border: transparent;
+    outline: none;
+    background-color: $Alabaster; 
+    margin: 3%;
+    color: $BrainFlix-DarkBlack;
+    width: 90%;
+}
+
+.preview-boxtwo {
+    width: 100%;
+    height: 80px;
+    border: 1px solid $Mercury;
+    border-radius: 5px;
+    background-color: $Alabaster;  
+}
+
+.preview-button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: $BrainFlix-Blue;
+    margin-top: 14px;
+    border-radius: 5px;
+    position: relative;
+    &__text {
+        color: $White;
+        font-weight: 400;
+        border: transparent;
+        background-color: $BrainFlix-Blue;
+        padding: 12px;
+        font-weight: 600;
+        font-size: 12px;
+    }
+    &__icon {
+        position: absolute;
+        left: 5%;
+        top: 20%;
+    }
+    &__cancel {
+        font-size: 12px;
+        text-align: center;
+        color: $BrainFlix-Blue;
+        font-weight: 600;
+        margin-top: 15%;
+    }
 }
