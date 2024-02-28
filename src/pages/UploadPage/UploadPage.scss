@@ -6,6 +6,9 @@
 .preview {
     padding: 0% 5%;
     border-top: 1px solid $Mercury;
+    @include desktop {
+        padding: 0% 10%;
+    }
 
 }
 
@@ -14,10 +17,38 @@
     font-size: 24px;
     color: $BrainFlix-Black;
     padding: 4% 0%;
+    @include tablet {
+        border-bottom: 1px solid $Mercury;
+        padding: 5% 0%;
+    }
+}
+
+.upload-video-container {
+    @include desktop {
+        display: flex;
+        justify-content: space-between;
+        
+    }
+}
+
+.preview-imagebox {  
+    width: 100%;
+    @include tablet {
+        width: 50%;
+        @include desktop {
+            width: 35%;
+        }
+    }
 }
 
 .preview-image {          //This is the uploaded video image
     width: 100%;
+    @include tablet {
+        // width: 50%;
+    }
+    @include desktop {
+        // width: 50%;
+    }
 }
 
 .preview-text {           //This is the title text
@@ -33,15 +64,9 @@
     border: 1px solid $Mercury;
     border-radius: 5px;
     background-color: $Alabaster; 
-}
-
-.preview-input {
-    border: transparent;
-    outline: none;
-    background-color: $Alabaster; 
-    margin: 3%;
-    color: $BrainFlix-DarkBlack;
-    width: 90%;
+    @include desktop {
+        width: 500px;
+    }
 }
 
 .preview-boxtwo {
@@ -49,7 +74,33 @@
     height: 80px;
     border: 1px solid $Mercury;
     border-radius: 5px;
-    background-color: $Alabaster;  
+    background-color: $Alabaster; 
+    margin-bottom: 20px;
+    @include desktop {
+        width: 500px;
+    }
+
+}
+
+.preview-input {
+    border: transparent;
+    outline: none;
+    background-color: $Alabaster; 
+    margin: 8px;
+    color: $BrainFlix-DarkBlack;
+    width: 90%;
+
+   
+}
+
+.button-container {
+    @include tablet {
+        border-top: 1px solid $Mercury;  
+        display: flex;
+        flex-direction: row-reverse;
+        padding: 0%;
+        
+    }
 }
 
 .preview-button {
@@ -60,6 +111,11 @@
     margin-top: 14px;
     border-radius: 5px;
     position: relative;
+    @include tablet {
+        width: 20%;
+        
+    }
+   
     &__text {
         color: $White;
         font-weight: 400;
@@ -79,6 +135,15 @@
         text-align: center;
         color: $BrainFlix-Blue;
         font-weight: 600;
-        margin-top: 15%;
+        margin-top: 30px;
+        
+        @include tablet {
+           padding-right: 100px;
+            
+            
+        }
     }
 }
+
+
+  
