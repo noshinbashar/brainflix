@@ -14,7 +14,7 @@ function UploadPage () {
                 <img className="preview-image" src={Preview} alt="PreviewImage" ></img>
             </div>
 
-            <div>
+            <div className="preview-boxs">
                 <p className="preview-text">TITLE YOUR VIDEO</p>
                 <div className="preview-boxone">
                 <input className="preview-input" type="text" placeholder="Add a title to your video"/>

@@ -53,6 +53,9 @@
         outline: none;
         background-color: $Alabaster; 
         padding-left: 5%;
+        &::placeholder {
+            color: $BrainFlix-DarkBlack;
+            }
     }
     &__image {
         padding-left: 3%;
