@@ -1,6 +1,6 @@
 import "./Comments.scss"
 
-function Comments(props) {
+function Comments({Comments}) {
 
     function formatDate(timestamp) {
         const date = new Date(timestamp);
@@ -23,13 +23,11 @@ function Comments(props) {
         }
     }
 
-
-    console.log(props)
     return(
         <>
         <div className="comments">
         <ul className="comments__box">
-            {props.Comments.comments.map((item) => {
+            {Comments?.map((item) => {
                 return(
 
                     <li className="list" key={item.id}>

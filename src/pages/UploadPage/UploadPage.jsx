@@ -1,6 +1,8 @@
 import "./UploadPage.scss"
 import Preview from "../../assets/Images/Upload-video-preview.jpg"
 import Publish from "../../assets/Images/publish.svg"
+import { Link } from "react-router-dom"
+
 
 function UploadPage () {
     return (
@@ -29,11 +31,13 @@ function UploadPage () {
             
         <div className="button-container">
             <div className="preview-button">
+                <Link to="/">
                 <button className="preview-button__text">PUBLISH</button>
                 <img className="preview-button__icon" src={Publish} alt="Publish" ></img>
+                </Link>
             </div>
 
-            <div>
+            <div>      
                 <p className="preview-button__cancel">CANCEL</p>
             </div>
         </div>

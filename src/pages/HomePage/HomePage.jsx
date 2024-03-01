@@ -6,24 +6,33 @@ import Comments from "../../components/Comments/Comments";
 import Videolist from "../../components/Videolist/Videolist";
 import Videoimage from "../../components/Videoimage/Videoimage";
 import axios from "axios"
+import { Link, useParams } from "react-router-dom";
 
 function HomePage () {
     const [selectedVideo, setSelectedVideo] = useState([]);
-    const [comments, setComments] = useState([]);
     const [videolist, setVideolist] = useState([]);
-    const [videoimage, setVideoimage] = useState([]);
     const apiKey = "be28388a-18a2-46a8-94fa-d8549ebc8517";
     const url = "https://unit-3-project-api-0a5620414506.herokuapp.com/";
+    const defaultVideoId = "84e96018-4022-434e-80bf-000ce4cd12b8"
+    const params = useParams();
 
     useEffect(() => {
       async function getVideoList() {
         const response = await axios.get(`${url}videos?api_key=${apiKey}`)
         console.log(response.data)
-        setVideolist(response.data)
+        setVideolist(response.data)     //updating the videolist state using setVideolist
       }
       getVideoList()
     }, [])
 
+    useEffect(() => {
+      async function getSelectedVideo() {
+        const response = await axios.get(`${url}videos/${defaultVideoId}?api_key=${apiKey}`)
+        console.log(response.data)
+        setSelectedVideo(response.data)  //updating the selectedvideo state using setSelectedVideo    
+      }
+      getSelectedVideo()                 
+    }, [])
 
     // function handleVideoClick(id) {
     //   const clickedVideo = videolist.find((video) => {
@@ -37,14 +46,14 @@ function HomePage () {
     return(
         <>
         <div className="App">
-      <Videoimage videoimage={videoimage}/>
+      <Videoimage videoimage={selectedVideo.image}/>
 
       <div className="mainpage">
 
       <div className="itemone">
-      {/* <Video selectedVideo={selectedVideo} /> */}
+      <Video selectedVideo={selectedVideo} />
       <NewComment />
-      {/* <Comments Comments={comments}/> */}
+      <Comments Comments={selectedVideo.comments}/>
       </div>
 
       <div className="itemtwo">

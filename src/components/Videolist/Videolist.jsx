@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import "./Videolist.scss"
 
 function Videolist({Videolist}) {
@@ -10,13 +11,15 @@ function Videolist({Videolist}) {
             // .filter((videos) => (videos.id) !== props.selectedVideo.id) 
             .map((videos) => {
                 return (
+                    <Link to={`/${videos.id}`}>
                     <li className="videolist__item" >
                     <p><img className="videolist__videos" src={videos.image} alt="Video List"></img></p>
                     <div className="videolist__info">
                     <p className="videolist__title">{videos.title}</p>
                     <p className="videolist__channel">{videos.channel}</p> 
                     </div>   
-                </li>         
+                </li> 
+                </Link>        
                 )
                
             })}
