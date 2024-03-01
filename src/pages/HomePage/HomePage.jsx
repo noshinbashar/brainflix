@@ -1,5 +1,4 @@
 import Video from "../../components/Video/Video";
-// import videoData from "../../Data/video-details.json";  
 import { useState, useEffect } from "react";
 import NewComment from "../../components/Newcomment/Newcomment";
 import Comments from "../../components/Comments/Comments";
@@ -26,22 +25,18 @@ function HomePage () {
     }, [])
 
     useEffect(() => {
-      async function getSelectedVideo() {
-        const response = await axios.get(`${url}videos/${defaultVideoId}?api_key=${apiKey}`)
+      async function getSelectedVideo(VideoId) {
+        const response = await axios.get(`${url}videos/${VideoId}?api_key=${apiKey}`)
         console.log(response.data)
         setSelectedVideo(response.data)  //updating the selectedvideo state using setSelectedVideo    
       }
-      getSelectedVideo()                 
-    }, [])
-
-    // function handleVideoClick(id) {
-    //   const clickedVideo = videolist.find((video) => {
-    //   return video.id === id;
-    // });
-    // setSelectedVideo(clickedVideo);
-    // setComments(clickedVideo); 
-    // setVideoimage(clickedVideo);
-    // }
+      if (params.id) {
+        console.log(params.id); // this is coming from the url for the route /:id 
+        getSelectedVideo(params.id);
+      } else {
+        getSelectedVideo(defaultVideoId);
+      }
+    }, [params]);
 
     return(
         <>
@@ -58,7 +53,7 @@ function HomePage () {
 
       <div className="itemtwo">
       <Videolist Videolist={videolist} 
-      // selectedVideo={selectedVideo}
+      selectedVideo={selectedVideo} 
       />
       </div>
 

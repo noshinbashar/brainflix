@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom"
 import "./Videolist.scss"
 
-function Videolist({Videolist}) {
+function Videolist({Videolist, selectedVideo}) {
     return(
         <>
         <div className="videos">
         <p className="title">NEXT VIDEOS</p>
         <ul className="videolist">
             {Videolist
-            // .filter((videos) => (videos.id) !== props.selectedVideo.id) 
+            .filter((videos) => (videos.id) !==selectedVideo.id) 
             .map((videos) => {
                 return (
                     <Link to={`/${videos.id}`}>
