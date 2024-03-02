@@ -1,3 +1,4 @@
+import "./HomePage.scss"
 import Video from "../../components/Video/Video";
 import { useState, useEffect } from "react";
 import NewComment from "../../components/Newcomment/Newcomment";

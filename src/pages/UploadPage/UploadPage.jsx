@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom"
 
 
 function UploadPage () {
-    const navigate = useNavigate(); // returns a function
+    const navigate = useNavigate();
 
   const handleFormSubmit = (event) => {
     event.preventDefault();

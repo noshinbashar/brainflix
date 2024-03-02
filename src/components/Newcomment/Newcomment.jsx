@@ -2,11 +2,8 @@ import "./Newcomment.scss"
 import CommentImage from "../../assets/Images/add_comment.svg"
 import Icon from "./../../assets/Images/Mohan-muruge.jpg"
 import { useState } from "react"
-import axios from "axios"
 
 function NewComment({selectedVideo, postComment}) {
-    const apiKey = "be28388a-18a2-46a8-94fa-d8549ebc8517";
-    const url = "https://unit-3-project-api-0a5620414506.herokuapp.com/";
     const [newComment, setNewComment] = useState("");
 
   const handleCommentSubmit = async (e) => {
@@ -17,7 +14,7 @@ function NewComment({selectedVideo, postComment}) {
         comment: newComment
     }
     postComment(Comment) 
-    setNewComment(""); // Clear input field after successful comment post
+    setNewComment(""); 
 
   };
     return(
