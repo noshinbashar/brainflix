@@ -14,6 +14,7 @@ function HomePage () {
     const url = "https://unit-3-project-api-0a5620414506.herokuapp.com/";
     const defaultVideoId = "84e96018-4022-434e-80bf-000ce4cd12b8"
     const params = useParams();
+    const [videoComments, setVideoComments] = useState([])
 
     useEffect(() => {
       async function getVideoList() {
@@ -23,18 +24,15 @@ function HomePage () {
       }
       getVideoList()
     }, [])
-
-    const updateVideo = async (videoId) => {
-      const response = await axios.get(`${url}videos/${videoId}?api_key=${apiKey}`);
-      setSelectedVideo(response.data);
-    };
+    
+    async function getSelectedVideo(VideoId) {
+      const response = await axios.get(`${url}videos/${VideoId}?api_key=${apiKey}`)
+      console.log(response.data)
+      setSelectedVideo(response.data)  //updating the selectedvideo state using setSelectedVideo  
+      setVideoComments(response.data.comments)
+    }
 
     useEffect(() => {
-      async function getSelectedVideo(VideoId) {
-        const response = await axios.get(`${url}videos/${VideoId}?api_key=${apiKey}`)
-        console.log(response.data)
-        setSelectedVideo(response.data)  //updating the selectedvideo state using setSelectedVideo    
-      }
       if (params.id) {
         console.log(params.id); // this is coming from the url for the route /:id 
         getSelectedVideo(params.id);
@@ -42,6 +40,18 @@ function HomePage () {
         getSelectedVideo(defaultVideoId);
       }
     }, [params]);
+
+     //Post comment
+     const postComment = async (comment) => { 
+      console.log(comment) 
+      try {
+          const commentsResponse = await axios.post(`${url}videos/${selectedVideo.id}/comments?api_key=${apiKey}`,comment);
+          console.log(commentsResponse)
+          setVideoComments([...videoComments, commentsResponse.data])
+        } catch (error) {
+          console.error("Error posting comment:", error);
+        }
+    };
 
     return(
         <>
@@ -52,8 +62,8 @@ function HomePage () {
             <div className="mainpage">
                 <div className="itemone">
                     <Video selectedVideo={selectedVideo} />
-                    <NewComment selectedVideo={selectedVideo} updateVideo={updateVideo} />
-                    <Comments Comments={selectedVideo.comments} updateVideo={updateVideo} />
+                    <NewComment selectedVideo={selectedVideo} postComment={postComment} />
+                    <Comments Comments={videoComments} />
                 </div>
 
                 <div className="itemtwo">

@@ -27,9 +27,8 @@ function Comments({Comments}) {
         <>
         <div className="comments">
         <ul className="comments__box">
-            {Comments?.map((item) => {
-                return(
-
+        {Comments?.sort((a, b) => b.timestamp - a.timestamp).map((item) => {
+                return (
                     <li className="list" key={item.id}>
                         <p className="list__name">{item.name}</p>
                         <p className="list__comment">{item.comment}</p>
@@ -37,7 +36,7 @@ function Comments({Comments}) {
                         <p className="list__time">{formatDate(item.timestamp)}</p>
                         <p className="list__image"></p>
                     </li>
-                )
+                );
             })}
 
         </ul>

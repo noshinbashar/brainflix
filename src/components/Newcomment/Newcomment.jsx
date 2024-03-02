@@ -4,7 +4,7 @@ import Icon from "./../../assets/Images/Mohan-muruge.jpg"
 import { useState } from "react"
 import axios from "axios"
 
-function NewComment({selectedVideo, updateVideo}) {
+function NewComment({selectedVideo, postComment}) {
     const apiKey = "be28388a-18a2-46a8-94fa-d8549ebc8517";
     const url = "https://unit-3-project-api-0a5620414506.herokuapp.com/";
     const [newComment, setNewComment] = useState("");
@@ -16,16 +16,9 @@ function NewComment({selectedVideo, updateVideo}) {
         name: "Mohan",
         comment: newComment
     }
+    postComment(Comment) 
+    setNewComment(""); // Clear input field after successful comment post
 
-    try {
-      await axios.post(
-        `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${selectedVideo.id}/comments?api_key=${apiKey}`,Comment
-      );
-      setNewComment(""); // Clear input field after successful comment post
-      updateVideo(selectedVideo.id); // Update the video data to reflect new comment
-    } catch (error) {
-      console.error("Error posting comment:", error);
-    }
   };
     return(
         <>
