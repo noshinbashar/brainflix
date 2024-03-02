@@ -11,7 +11,7 @@ function Videolist({Videolist, selectedVideo}) {
             .filter((videos) => (videos.id) !==selectedVideo.id) 
             .map((videos) => {
                 return (
-                    <Link to={`/${videos.id}`}>
+                    <Link to={`/${videos.id}`} className="link">    {/* adding this className to remove text decoration  */}
                     <li className="videolist__item" >
                     <p><img className="videolist__videos" src={videos.image} alt="Video List"></img></p>
                     <div className="videolist__info">

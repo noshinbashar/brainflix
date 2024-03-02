@@ -47,8 +47,7 @@
         margin-bottom: 15px;
     }
     &__item {
-        display: flex;
-        
+        display: flex;    
     }
     &__title {
         font-size: 14px;
@@ -62,4 +61,7 @@
         font-size: 12px;
         color: $BrainFlix-Black;
     }
+}
+.link {
+    text-decoration: none;
 }

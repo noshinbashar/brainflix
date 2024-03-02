@@ -1,14 +1,24 @@
 import "./UploadPage.scss"
 import Preview from "../../assets/Images/Upload-video-preview.jpg"
 import Publish from "../../assets/Images/publish.svg"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 
 function UploadPage () {
+    const navigate = useNavigate(); // returns a function
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    alert("Thank you for uploading your video.");
+    navigate('/');
+  }
+    
+
     return (
         <>
         <div className="preview">
                 <h1 className="preview-title">Upload Video</h1>
+
         <div className="upload-video-container">
 
             <div className="preview-imagebox"> 
@@ -27,19 +37,21 @@ function UploadPage () {
                 <input className="preview-input" type="text" placeholder="Add a description to your video"/>
                 </div>
             </div>
+
         </div>
             
         <div className="button-container">
+
             <div className="preview-button">
-                <Link to="/">
-                <button className="preview-button__text">PUBLISH</button>
-                <img className="preview-button__icon" src={Publish} alt="Publish" ></img>
-                </Link>
+                <form onSubmit={handleFormSubmit}>
+                    <button className="preview-button__text">PUBLISH</button>
+                    <img className="preview-button__icon" src={Publish} alt="Publish" ></img>
+                </form>
             </div>
 
-            <div>      
+            <Link to={"/"} className="link">   
                 <p className="preview-button__cancel">CANCEL</p>
-            </div>
+            </Link> 
         </div>
 
 
