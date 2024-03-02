@@ -24,6 +24,11 @@ function HomePage () {
       getVideoList()
     }, [])
 
+    const updateVideo = async (videoId) => {
+      const response = await axios.get(`${url}videos/${videoId}?api_key=${apiKey}`);
+      setSelectedVideo(response.data);
+    };
+
     useEffect(() => {
       async function getSelectedVideo(VideoId) {
         const response = await axios.get(`${url}videos/${VideoId}?api_key=${apiKey}`)
@@ -41,25 +46,23 @@ function HomePage () {
     return(
         <>
         <div className="App">
-      <Videoimage videoimage={selectedVideo.image}/>
 
-      <div className="mainpage">
+            <Videoimage videoimage={selectedVideo.image}/>
 
-      <div className="itemone">
-      <Video selectedVideo={selectedVideo} />
-      <NewComment />
-      <Comments Comments={selectedVideo.comments}/>
-      </div>
+            <div className="mainpage">
+                <div className="itemone">
+                    <Video selectedVideo={selectedVideo} />
+                    <NewComment selectedVideo={selectedVideo} updateVideo={updateVideo} />
+                    <Comments Comments={selectedVideo.comments} updateVideo={updateVideo} />
+                </div>
 
-      <div className="itemtwo">
-      <Videolist Videolist={videolist} 
-      selectedVideo={selectedVideo} 
-      />
-      </div>
+                <div className="itemtwo">
+                    <Videolist Videolist={videolist} 
+                    selectedVideo={selectedVideo} />
+                </div>
+            </div>
 
-      </div>
-      
-    </div>
+        </div>
         </>
     )
 }
