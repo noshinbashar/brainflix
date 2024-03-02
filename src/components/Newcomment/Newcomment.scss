@@ -52,9 +52,11 @@
             border: transparent;
             padding: 4%;
             background-color: $Alabaster;
-            color: $BrainFlix-DarkBlack; 
             outline: none; 
-            position: absolute;  
+            position: absolute; 
+            &::placeholder {
+                color: $BrainFlix-DarkBlack;
+                }  
             @include tablet {
                 padding: 2%;
             }
