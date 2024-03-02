@@ -53,6 +53,17 @@ function HomePage () {
         }
     };
 
+    //Delete comment
+    async function deleteComment(commentId) {
+      try {
+        await axios.delete(`${url}comments/${commentId}?api_key=${apiKey}`);
+        setVideoComments(prevComments => prevComments.filter(comment => comment.id !== commentId));
+        console.log("Comment deleted successfully.");
+      } catch (error) {
+        console.error("Error deleting comment:", error);
+      }
+    }
+
     return(
         <>
         <div className="App">
@@ -63,7 +74,7 @@ function HomePage () {
                 <div className="itemone">
                     <Video selectedVideo={selectedVideo} />
                     <NewComment selectedVideo={selectedVideo} postComment={postComment} />
-                    <Comments Comments={videoComments} />
+                    <Comments Comments={videoComments} deleteComment={deleteComment} />
                 </div>
 
                 <div className="itemtwo">

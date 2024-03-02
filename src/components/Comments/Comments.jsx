@@ -1,6 +1,7 @@
 import "./Comments.scss"
+import Like from "../../assets/Images/likes.svg"
 
-function Comments({Comments}) {
+function Comments({Comments, deleteComment}) {
 
     function formatDate(timestamp) {
         const date = new Date(timestamp);
@@ -24,28 +25,41 @@ function Comments({Comments}) {
     }
 
     return(
-        <>
-        <div className="comments">
-        <ul className="comments__box">
-        {Comments?.sort((a, b) => b.timestamp - a.timestamp).map((item) => {
-                return (
-                    <li className="list" key={item.id}>
-                        <p className="list__name">{item.name}</p>
-                        <p className="list__comment">{item.comment}</p>
-                        {/* <p>{item.likes}</p> */}
-                        <p className="list__time">{formatDate(item.timestamp)}</p>
-                        <p className="list__image"></p>
-                    </li>
-                );
-            })}
+    <>
+    <div className="comments">
+    <ul className="comments__box">
+    {Comments?.sort((a, b) => b.timestamp - a.timestamp).map((item) => {
+        return (
+        <li className="list" key={item.id}>
+            <p className="list__name">{item.name}</p>
+            <p className="list__comment">{item.comment}</p>
 
-        </ul>
-        </div>
-        </>
+            <div className="comment-item">
+                <div className="comment-item__image">
+                    <img src={Like} alt="Search" ></img>
+                    <p>{item.likes}</p>
+                </div>
 
-    )
+                <div>
+                    <button className="comment-item__button" onClick={() => deleteComment(item.id)} >Delete</button>
+                </div>
+            </div>
+
+                <p className="list__time">{formatDate(item.timestamp)}</p>
+                <p className="list__image"></p>   {/* This represents profile image for each comment */}
+                
+        </li>
+        );
+    })}
+
+    </ul>
+
+    </div>
+    </>
+
+)
 }
 
-export default Comments
+export default Comments;
 
 

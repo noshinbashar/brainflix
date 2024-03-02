@@ -52,4 +52,27 @@
         top: 0%;
         left: 0%;
     }
+  
+}
+
+.comment-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3%;
+    &__image {
+        width: 35px;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__button {
+        background-color: $BrainFlix-DarkBlue;
+        height: 25px;
+        width: 50px;
+        color: $White;
+        border: none;
+        padding: 1% 2%;
+        border-radius: 3px; 
+        font-weight: 600;
+        
+    }
 }
