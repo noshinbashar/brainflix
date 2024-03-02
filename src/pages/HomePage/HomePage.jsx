@@ -5,7 +5,7 @@ import Comments from "../../components/Comments/Comments";
 import Videolist from "../../components/Videolist/Videolist";
 import Videoimage from "../../components/Videoimage/Videoimage";
 import axios from "axios"
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function HomePage () {
     const [selectedVideo, setSelectedVideo] = useState([]);
@@ -56,13 +56,14 @@ function HomePage () {
     //Delete comment
     async function deleteComment(commentId) {
       try {
-        await axios.delete(`${url}comments/${commentId}?api_key=${apiKey}`);
+        await axios.delete(`${url}videos/${selectedVideo.id}/comments/${commentId}?api_key=${apiKey}`);
         setVideoComments(prevComments => prevComments.filter(comment => comment.id !== commentId));
         console.log("Comment deleted successfully.");
       } catch (error) {
         console.error("Error deleting comment:", error);
       }
     }
+    
 
     return(
         <>

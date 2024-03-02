@@ -29,6 +29,7 @@ function Comments({Comments, deleteComment}) {
     <div className="comments">
     <ul className="comments__box">
     {Comments?.sort((a, b) => b.timestamp - a.timestamp).map((item) => {
+
         return (
         <li className="list" key={item.id}>
             <p className="list__name">{item.name}</p>
@@ -36,17 +37,18 @@ function Comments({Comments, deleteComment}) {
 
             <div className="comment-item">
                 <div className="comment-item__image">
-                    <img src={Like} alt="Search" ></img>
+                    <img src={Like} alt="Like" ></img>
                     <p>{item.likes}</p>
                 </div>
 
                 <div>
-                    <button className="comment-item__button" onClick={() => deleteComment(item.id)} >Delete</button>
+                    <button className="comment-item__button" 
+                    onClick={() => deleteComment(item.id)} >Delete</button>   {/* Delete button for comments */}
                 </div>
             </div>
 
                 <p className="list__time">{formatDate(item.timestamp)}</p>
-                <p className="list__image"></p>   {/* This represents profile image for each comment */}
+                <p className="list__image"></p>     {/* This represents profile image for each comment */}
                 
         </li>
         );
