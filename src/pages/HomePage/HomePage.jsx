@@ -19,7 +19,8 @@ function HomePage () {
 
     useEffect(() => {
       async function getVideoList() {
-        const response = await axios.get(`${url}videos?api_key=${apiKey}`)
+        // const response = await axios.get(`${url}videos?api_key=${apiKey}`)
+        const response = await axios.get("http://localhost:8080/videos")
         console.log(response.data)
         setVideolist(response.data)     //updating the videolist state using setVideolist
       }
@@ -27,7 +28,8 @@ function HomePage () {
     }, [])
     
     async function getSelectedVideo(VideoId) {
-      const response = await axios.get(`${url}videos/${VideoId}?api_key=${apiKey}`)
+      // const response = await axios.get(`${url}videos/${VideoId}?api_key=${apiKey}`)
+      const response = await axios.get(`http://localhost:8080/videos/${VideoId}`)
       console.log(response.data)
       setSelectedVideo(response.data)  //updating the selectedvideo state using setSelectedVideo  
       setVideoComments(response.data.comments)
