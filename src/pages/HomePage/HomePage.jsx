@@ -48,7 +48,8 @@ function HomePage () {
      const postComment = async (comment) => { 
       console.log(comment) 
       try {
-          const commentsResponse = await axios.post(`${url}videos/${selectedVideo.id}/comments?api_key=${apiKey}`,comment);
+          // const commentsResponse = await axios.post(`${url}videos/${selectedVideo.id}/comments?api_key=${apiKey}`,comment);
+          const commentsResponse = await axios.post(`http://localhost:8080/videos/${selectedVideo.id}/comments`,comment);
           console.log(commentsResponse)
           setVideoComments([...videoComments, commentsResponse.data])
         } catch (error) {
