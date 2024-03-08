@@ -11,8 +11,8 @@ import { useParams } from "react-router-dom";
 function HomePage () {
     const [selectedVideo, setSelectedVideo] = useState([]);
     const [videolist, setVideolist] = useState([]);
-    const apiKey = "be28388a-18a2-46a8-94fa-d8549ebc8517";
-    const url = "https://unit-3-project-api-0a5620414506.herokuapp.com/";
+    // const apiKey = "be28388a-18a2-46a8-94fa-d8549ebc8517";
+    // const url = "https://unit-3-project-api-0a5620414506.herokuapp.com/";
     const defaultVideoId = "84e96018-4022-434e-80bf-000ce4cd12b8"
     const params = useParams();
     const [videoComments, setVideoComments] = useState([])
@@ -60,7 +60,8 @@ function HomePage () {
     //Delete comment
     async function deleteComment(commentId) {
       try {
-        await axios.delete(`${url}videos/${selectedVideo.id}/comments/${commentId}?api_key=${apiKey}`);
+        // await axios.delete(`${url}videos/${selectedVideo.id}/comments/${commentId}?api_key=${apiKey}`);
+        await axios.delete(`http://localhost:8080/videos/${selectedVideo.id}/comments/${commentId}`);
         setVideoComments(prevComments => prevComments.filter(comment => comment.id !== commentId));
         console.log("Comment deleted successfully.");
       } catch (error) {
