@@ -8,12 +8,16 @@ import Videoimage from "../../components/Videoimage/Videoimage";
 import axios from "axios"
 import { useParams } from "react-router-dom";
 
+
 function HomePage () {
     const [selectedVideo, setSelectedVideo] = useState([]);
     const [videolist, setVideolist] = useState([]);
     const defaultVideoId = "84e96018-4022-434e-80bf-000ce4cd12b8"
     const params = useParams();
     const [videoComments, setVideoComments] = useState([])
+    const imageURL = process.env.backendURL;
+
+    console.log(imageURL)
 
     useEffect(() => {
       async function getVideoList() {

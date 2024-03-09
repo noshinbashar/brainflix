@@ -13,7 +13,7 @@ function Videolist({Videolist, selectedVideo}) {
                 return (
                     <Link to={`/${videos.id}`} className="link">    {/* adding this className to remove text decoration  */}
                     <li className="videolist__item" >
-                    <p><img className="videolist__videos" src={videos.image} alt="Video List"></img></p>
+                    <p><img className="videolist__videos" src={`${videos.image}`} alt="Video List"></img></p>
                     <div className="videolist__info">
                     <p className="videolist__title">{videos.title}</p>
                     <p className="videolist__channel">{videos.channel}</p> 
