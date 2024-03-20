@@ -13,21 +13,28 @@ function UploadPage() {
         document.title = "Upload";
     }, []);
 
+    const onImageChange = (event) => {
+        console.log("show me the image")
+    }
+
     const handlePublish = (event) => {
         event.preventDefault();
         let newTitle = event.target.title.value;
         let newDescription = event.target.description.value;
 
-        axios.post("http://localhost:8080/videos", {
-            title: newTitle,
-            description: newDescription
-        })
-            .then(response => {
-                setPublished(true);
-                setTimeout(() => {
-                    setRedirect(true);
-                }, 1000);
-            });
+        const upload = { title: newTitle, description: newDescription }
+        console.log(upload)
+
+        // axios.post("http://localhost:8080/videos", {
+        //     title: newTitle,
+        //     description: newDescription
+        // })
+        //     .then(response => {
+        //         setPublished(true);
+        //         setTimeout(() => {
+        //             setRedirect(true);
+        //         }, 1000);
+        //     });
     }
 
     return (
@@ -35,7 +42,8 @@ function UploadPage() {
             <div className="preview">
                 <h1 className="preview-title">Upload Video</h1>
 
-                <form className="upload__form" onSubmit={handlePublish}>
+                <form className="upload__form" onSubmit={handlePublish} encType="multipart/form-data">
+                    {/* <input type="file" name="image" accept="image/*" /> */}
                     <div className="upload-video-container">
 
                         <div className="preview-imagebox">
@@ -54,6 +62,8 @@ function UploadPage() {
                                 <input className="preview-input" type="text" placeholder="Add a description to your video" name="description" />
                             </div>
                         </div>
+
+                        {/* <input type="file" multiple name="image" accept="image/*" onChange={onImageChange} /> */}
 
                     </div>
 
